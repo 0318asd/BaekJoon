@@ -82,23 +82,34 @@ void Stack::print()
 
 int main()
 {
-	int many, num;
-	Stack s;
+	int many; string str;
+
 	cin >> many;
 	for (int i = 0; i < many; i++)
 	{
-		cin >> num;
+		Stack s = new Stack;
+		cin >> str;
+		for (int j = 0; j < size(s); j++)
+		{
+			if (str[j] == '(')
+				s.push(0);
 
-		if (num == 0)
-			s.pop();
+			if (str[j] == ')')
+			{
+				if (s.empty())
+				{
+					cout << "NO" << endl;
+					return;
+				}
+				s.pop();
+			}
+		}
 
+		if (s.empty())
+			cout << "YES" << endl;
 		else
-			s.push(num);
+			cout << "NO" << endl;
+
+		delete s;
 	}
-	int sum = 0;
-	while (!s.empty())
-	{
-		sum += s.pop();
-	}
-	cout << sum << endl;
 }
