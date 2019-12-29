@@ -1,6 +1,6 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#include <iostream> 
+#include <algorithm> 
+#include <vector> 
 using namespace std;
 
 bool c(int a, int b)
@@ -19,7 +19,7 @@ int main()
 	}
 
 	sort(v.begin(), v.end(), c);
-	
+
 	int i = 0;
 	int count = 0;
 	while (true)
@@ -35,5 +35,5 @@ int main()
 			break;
 	}
 	cout << count << endl;
-	
+
 }
